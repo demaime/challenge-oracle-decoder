@@ -1,0 +1,72 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    
+}
+
+main {
+    margin: 5px;
+    border: solid 2px #43c09d;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top_logo {
+    height: 50px;
+    width: 50px;
+    }
+
+#enter_text, #output_text {
+    background: transparent;
+    border: none;
+    resize: none;
+    height: 250px;
+    width: 300px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.text_input, .results {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+  
+
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: center;
+
+}
+
+#btn_encrypt {
+    background-color: #249670;
+    color: white;
+    border: solid black 2px;
+    border-radius: 5px;
+    height: 50px;
+    margin: 5px 10px;
+    text-shadow: 1px 1px 2px black;
+}
+
+#btn_decrypt {
+    background-color: #43c09d;
+    color: white;
+    border: solid black 2px;
+    border-radius: 5px;
+    height: 50px;
+    margin: 5px 10px;
+    text-shadow: 1px 1px 2px black;
+}
