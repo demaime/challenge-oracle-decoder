@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">   
-    <title>Document</title>
+    <title>encryptoR</title>
 </head>
 <body>
     <header style="margin-top:10px;">
@@ -18,7 +18,7 @@
     </header>
     <main>
         <!-- Text input -->
-        <section class="text_input">
+        <section class="text_input_section">
             <textarea id="enter_text" placeholder="Ingrese el texto aquí"></textarea>
             <div style="display: flex; align-items: center; justify-content: center;">
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,16 +28,26 @@
             </div>
         </section>
         <!-- Buttons -->
-        <section class="buttons">
+        <section class="buttons_section">
             <button id="btn_encrypt">Encriptar</button>
             <button id="btn_decrypt">Desencriptar</button>
         </section>
         <!-- Results -->
-        <section class="results">
-            <textarea id="output_text" maxlength="300" placeholder="Ningún texto fue encontrado"></textarea>
+        <section class="results_section">
+            <textarea id="output_text" maxlength="300" placeholder="Ningún texto fue encontrado" readonly></textarea>
         </section>
+        <p id="modal_copy" class="hide">COPIADO AL PORTAPAPELES!</p>
+        <button id="btn_copy" class="hide">COPIAR</button>
     </main>
-    <footer></footer>
+    <footer>
+        <p>2022 - Challenge para Oracle Next Education</p>
+        <ul class="media">
+            <li><a href="https://ar.linkedin.com/in/aimedemian"><i class="fa-brands fa-linkedin fa-2xl"></i></a></li>
+            <li><a href="https://www.instagram.com/demianaime/"><i class="fa-brands fa-instagram-square fa-2xl"></i></li></a>
+            <li><a href="https://github.com/demaime"><i class="fa-brands fa-github-square fa-2xl"></i></li></a>
+        </ul>
+    </footer>
+    <script src="https://kit.fontawesome.com/12839909dd.js" crossorigin="anonymous"></script>
     <script src="./main.js"></script>
 </body>
 </html>

@@ -1,7 +1,14 @@
+//agregar limitacion cuando se intentan enviar mayusculas o acentos 
+
+
 const enterTextInput = document.getElementById("enter_text");
 const outputText = document.getElementById("output_text");
 const encryptBtn = document.getElementById("btn_encrypt");
 const decryptBtn = document.getElementById("btn_decrypt");
+const copyBtn = document.getElementById("btn_copy")
+const modalCopy = document.getElementById("modal_copy")
+
+enterTextInput.focus();
 
 function encrypt() {
   const enteredText = (enterTextInput.value).split("")
@@ -27,11 +34,17 @@ function encrypt() {
       result += character
     }
     outputText.value = result 
+    copyBtn.classList.remove("hide");
+    copyBtn.classList.add("show")
   }
-}
+  outputText.scroll()  
+  }
 
 function decrypt() {
-  const textToDecrypt = (outputText.value).split("")
+  enterTextInput.value = "";
+  enterTextInput.placeholder = "Desencriptando...";
+  setTimeout(() => {
+    const textToDecrypt = (outputText.value).split("")
   let result = "";
 
   let i = 0;
@@ -60,10 +73,20 @@ function decrypt() {
       result += textToDecrypt[i]
       i++;
    }
-    console.log(result)
-    enterTextInput.value = result;
+  enterTextInput.value = result;
   }
+  },500)
+
 }
 
+function copyToClipboard () {
+  const value = outputText.value
+  navigator.clipboard.writeText(value)
+  modalCopy.classList.remove("hide");
+  setTimeout(() => {modalCopy.classList.add("hide")}, 2000)
+}
+ 
 encryptBtn.onclick = encrypt;
 decryptBtn.onclick = decrypt;
+copyBtn.onclick = copyToClipboard;
+
